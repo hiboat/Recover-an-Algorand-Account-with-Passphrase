@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RecoverAccount.Views.RecoverAccountPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                    <Image Source="algorand_removebg_preview.png" VerticalOptions="Center" HeightRequest="64" />
+                </ContentView>
+            </StackLayout>
+        </StackLayout>
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
+                <Label Text="Recover Algorand Account!" FontSize="Title"/>
+                <Label Text="Recover and View Your Algorand Account Details with your Mnemonic Key!" FontSize="16" Padding="0,0,0,0"/>
+                <Entry x:Name="MnemonicKey" ReturnType="Next" Placeholder="Enter PassPhrase Key" FontSize="Medium" FlexLayout.AlignSelf="Stretch"  HorizontalOptions="CenterAndExpand"  TextColor="Black" Keyboard="Text" />
+                <Button Margin="0,10,0,0" Text="Recover Account"
+                        Clicked="recoverAccount"
+                        BackgroundColor="{StaticResource Primary}"
+                        TextColor="White" />
+
+                <Entry x:Name="AccountAddress" ReturnType="Next" Placeholder="Account Address" FontSize="Medium" FlexLayout.AlignSelf="Stretch"  HorizontalOptions="CenterAndExpand"  TextColor="Black" Keyboard="Text" />
+                <Entry x:Name="Amount" ReturnType="Next" Placeholder="Amount in Algos" FontSize="Medium" FlexLayout.AlignSelf="Stretch"  HorizontalOptions="CenterAndExpand"  TextColor="Black" Keyboard="Text" />
+
+                <Button x:Name="StoreKey" Margin="0,10,0,0" Text="Store Secret Key"
+                        Clicked="storeKey"
+                        IsEnabled="False"
+                        BackgroundColor="{StaticResource Primary}"
+                        TextColor="White" />
+                <Button x:Name="RetrieveKey" Margin="0,10,0,0" Text="Retrieve Secret Key"
+                        Clicked="retrieveKey"
+                        BackgroundColor="Green"
+                        IsEnabled="False"
+                        TextColor="White" />
+                <Button x:Name="RemoveKey" Margin="0,10,0,0" Text="Remove Secret Key"
+                        Clicked="removeKey"
+                        IsEnabled="False"
+                        BackgroundColor="Red"
+                        TextColor="White" />
+            </StackLayout>
+
+        </ScrollView>
+    </Grid>
+
+
+</ContentPage>
